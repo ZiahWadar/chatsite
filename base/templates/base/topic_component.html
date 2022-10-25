@@ -1,0 +1,22 @@
+
+
+
+
+
+ <form action="" method='GET'>
+    {% csrf_token %}
+    <input type="text" name='q' placeholder='search your topics here..'>
+</form>
+<h1>browse topics</h1>
+<h3> {{room_count}} room avaialble </h3>
+<a href="{% url 'home' %}">ALL</a>
+{% for topic in topics %}
+<div>
+    <a href="{% url 'home' %}?q={{topic.name}}">{{topic.name}}</a>
+</div>
+    
+{% endfor %}
+
+
+
+
